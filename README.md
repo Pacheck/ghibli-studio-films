@@ -1,2 +1,2 @@
 # ghibli-studio-films
-App that consumes api from ghibli studio
+App that consume api and access a list of films
