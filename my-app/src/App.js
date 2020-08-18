@@ -16,7 +16,6 @@ const App = () => {
       .get('https://ghibliapi.herokuapp.com/films')
       .then((res) => setFilms(res.data))
       .catch((err) => console.log(err));
-    return () => {};
   }, []);
 
   console.log(films);
