@@ -4,7 +4,7 @@ import './index.css';
 const Film = ({ film }) => {
   return (
     <li className="li-container">
-      <span>{film.title}</span>
+      <a href="#">{film.title}</a>
     </li>
   );
 };

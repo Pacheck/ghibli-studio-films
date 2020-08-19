@@ -9,6 +9,8 @@
   border-radius: 1em;
 
   background-color: #e79c2c;
+  box-shadow: 0 0 1em black;
+  background-image: linear-gradient(to right, #e79c2c 90%, white 10%);
 }
 
 .listar-filmes {
