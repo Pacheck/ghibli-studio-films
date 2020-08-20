@@ -58,9 +58,14 @@ const App = () => {
 
     filteredFilms.map((film) => {
       if (id === film.id) {
-        setMovie(film);
+        return setMovie(film);
       }
+      return film;
     });
+  }
+
+  function backToFilmListHandler() {
+    return setShowList(!showList);
   }
 
   return (
@@ -71,6 +76,7 @@ const App = () => {
       showFilmInfoHandler={showFilmInfoHandler}
       showFilmInfo={showFilmInfo}
       movie={movie}
+      backToFilmListHandler={backToFilmListHandler}
     />
   );
 };

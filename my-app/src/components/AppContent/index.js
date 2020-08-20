@@ -13,16 +13,21 @@ const AppContent = ({
   showFilmInfoHandler,
   showFilmInfo,
   movie,
+  backToFilmListHandler,
 }) => {
   console.log(showList);
   return (
     <div className="app-content">
-      <Search listaFilmesHandler={listaFilmesHandler} showList={showList} />
+      {!showList && (
+        <Search listaFilmesHandler={listaFilmesHandler} showList={showList} />
+      )}
 
       {!!showList && (
         <ListaDeFilmes
           filteredFilms={filteredFilms}
           showFilmInfoHandler={showFilmInfoHandler}
+          showList={showList}
+          backToFilmListHandler={backToFilmListHandler}
         />
       )}
       {!!showFilmInfo && <Movie movie={movie} />}
