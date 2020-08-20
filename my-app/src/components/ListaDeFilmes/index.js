@@ -3,14 +3,20 @@ import './index.css';
 
 import Film from '../Film';
 
-const Lista = ({ filteredFilms }) => {
+const Lista = ({ filteredFilms, showFilmInfoHandler }) => {
   console.log(filteredFilms);
   return (
     <div className="lista-container">
       <span> Lista de filmes</span>
       <ul className="ul-container">
         {filteredFilms.map((filme, index) => {
-          return <Film key={index} film={filme} />;
+          return (
+            <Film
+              key={index}
+              film={filme}
+              showFilmInfoHandler={showFilmInfoHandler}
+            />
+          );
         })}
       </ul>
     </div>

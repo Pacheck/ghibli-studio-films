@@ -9,12 +9,15 @@
 
   border-radius: 1em;
 
-  /* background-color: #e79c2c; */
-  background-image: linear-gradient(
-    #e2a013,
-    rgba(233, 156, 40, 0.924),
-    rgba(190, 132, 46, 0.877)
-  );
+  background-color: #e79c2c;
+  /* background-image: linear-gradient(
+    to right,
+    white 10%,
+    #e2a013 30%,
+    rgba(233, 156, 40, 0.924) 30%,
+    rgba(190, 132, 46, 0.877) 30%
+  ); */
+  /* background-image: linear-gradient(to right, #e79c2c 90%, white 10%) */
   box-shadow: 0 0 1em black;
 }
 
