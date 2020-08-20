@@ -20,6 +20,8 @@ const App = () => {
   const [filteredFilms, setFilteredFilms] = useState(initiaState);
   const [films, setFilms] = useState(initiaState);
   const [showList, setShowList] = useState(false);
+  const [showFilmInfo, setShowFilmInfo] = useState(false);
+  const [movie, setMovie] = useState(initiaState);
 
   useEffect(() => {
     axios
@@ -45,7 +47,20 @@ const App = () => {
 
     setFilteredFilms(newFilteredFilms);
     setShowList(!showList);
-    console.log(newFilteredFilms);
+    setShowFilmInfo(false);
+
+    // console.log(newFilteredFilms);
+  }
+
+  function showFilmInfoHandler(id) {
+    setShowFilmInfo(true);
+    // setShowList(!showList);
+
+    filteredFilms.map((film) => {
+      if (id === film.id) {
+        setMovie(film);
+      }
+    });
   }
 
   return (
@@ -53,6 +68,9 @@ const App = () => {
       listaFilmesHandler={listaFilmesHandler}
       filteredFilms={filteredFilms}
       showList={showList}
+      showFilmInfoHandler={showFilmInfoHandler}
+      showFilmInfo={showFilmInfo}
+      movie={movie}
     />
   );
 };
