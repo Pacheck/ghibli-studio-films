@@ -2,6 +2,7 @@ import React from 'react';
 import './index.css';
 
 import Film from '../Film';
+import Navigator from '../Navigator';
 
 const Lista = ({
   filteredFilms,
@@ -11,10 +12,7 @@ const Lista = ({
   console.log(filteredFilms);
   return (
     <div className="lista-container">
-      <nav>
-        <button onClick={backToFilmListHandler}>Voltar</button>
-        <span> Lista de filmes</span>
-      </nav>
+      <Navigator backToFilmListHandler={backToFilmListHandler} />
       <ul className="ul-container">
         {filteredFilms.map((filme, index) => {
           return (
