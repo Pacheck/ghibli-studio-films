@@ -3,18 +3,22 @@ import './index.css';
 
 import Navigator from '../Navigator';
 
-const Movie = ({ movie }) => {
+const Movie = ({ movie, toBackHandler }) => {
+  const type = 'movie';
   return (
     <div className="movie-container">
-      <Navigator />
-      <table className="movie-table">
-        <tr>
-          <td>Title: {movie.title}</td>
-          <td>Producer: {movie.producer}</td>
-          <td>Release date: {movie.releaseDate}</td>
-          <td>Rate score: {movie.rateScore}</td>
-        </tr>
-      </table>
+      <Navigator
+        myBackHandler={(e) => toBackHandler(type)}
+        name={movie.title}
+      />
+      <div className="movie-table">
+        <span>Title: {movie.title}</span>
+        <span>Director: {movie.director}</span>
+        <span>Producer: {movie.producer}</span>
+        <span> Release date: {movie.releaseDate}</span>
+        <span>Rate score: {movie.rateScore}</span>
+        <span>Description: {movie.description}</span>
+      </div>
     </div>
   );
 };
