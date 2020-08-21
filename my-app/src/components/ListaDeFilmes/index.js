@@ -4,15 +4,10 @@ import './index.css';
 import Film from '../Film';
 import Navigator from '../Navigator';
 
-const Lista = ({
-  filteredFilms,
-  showFilmInfoHandler,
-  backToFilmListHandler,
-}) => {
-  console.log(filteredFilms);
+const Lista = ({ filteredFilms, showFilmInfoHandler, toBackHandler }) => {
   return (
     <div className="lista-container">
-      <Navigator backToFilmListHandler={backToFilmListHandler} />
+      <Navigator myBackHandler={toBackHandler} />
       <ul className="ul-container">
         {filteredFilms.map((filme, index) => {
           return (
@@ -20,7 +15,7 @@ const Lista = ({
               key={index}
               film={filme}
               showFilmInfoHandler={showFilmInfoHandler}
-              backToFilmListHandler={backToFilmListHandler}
+              myBackHandler={toBackHandler}
             />
           );
         })}
