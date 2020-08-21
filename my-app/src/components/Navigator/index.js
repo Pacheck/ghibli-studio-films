@@ -1,11 +1,11 @@
 import React from 'react';
 import './index.css';
 
-const Navigator = ({ backToFilmListHandler }) => {
+const Navigator = ({ myBackHandler, name }) => {
   return (
     <nav>
-      <button onClick={backToFilmListHandler}>Voltar</button>
-      <span> Lista de filmes</span>
+      <button onClick={myBackHandler}>Voltar</button>
+      <span>{name ? name : 'Lista de Filmes'}</span>
     </nav>
   );
 };
