@@ -9,10 +9,10 @@ const Movie = ({ movie }) => {
       <Navigator />
       <table className="movie-table">
         <tr>
-          <td>{movie.title}</td>
-          <td>{movie.producer}</td>
-          <td>{movie.releaseDate}</td>
-          <td>{movie.rateScore}</td>
+          <td>Title: {movie.title}</td>
+          <td>Producer: {movie.producer}</td>
+          <td>Release date: {movie.releaseDate}</td>
+          <td>Rate score: {movie.rateScore}</td>
         </tr>
       </table>
     </div>
