@@ -13,13 +13,16 @@ const initiaState = [
     releaseDate: '',
     rateScore: '',
     title: '',
+    description: '',
+    director: '',
   },
 ];
 
 const App = () => {
   const [filteredFilms, setFilteredFilms] = useState(initiaState);
   const [films, setFilms] = useState(initiaState);
-  const [showList, setShowList] = useState(false);
+  const [showSearch, setshowSearch] = useState(true);
+  const [showFilmList, setShowFilmList] = useState(false);
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [movie, setMovie] = useState(initiaState);
 
@@ -42,19 +45,19 @@ const App = () => {
         producer: film.producer,
         releaseDate: film.release_date,
         rateScore: film.rt_score,
+        description: film.description,
+        director: film.director,
       };
     });
 
     setFilteredFilms(newFilteredFilms);
-    setShowList(!showList);
-    setShowFilmInfo(false);
-
-    // console.log(newFilteredFilms);
+    setshowSearch(!showSearch);
+    setShowFilmList(!showFilmList);
   }
 
   function showFilmInfoHandler(id) {
     setShowFilmInfo(true);
-    // setShowList(!showList);
+    setShowFilmList(!showFilmList);
 
     filteredFilms.map((film) => {
       if (id === film.id) {
@@ -64,19 +67,28 @@ const App = () => {
     });
   }
 
-  function backToFilmListHandler() {
-    return setShowList(!showList);
+  function toBackHandler(type) {
+    console.log(type);
+    if (type === 'movie') {
+      setShowFilmList(true);
+      setShowFilmInfo(false);
+      setshowSearch(false);
+    } else {
+      setshowSearch(true);
+      setShowFilmList(false);
+    }
   }
 
   return (
     <AppContent
       listaFilmesHandler={listaFilmesHandler}
-      filteredFilms={filteredFilms}
-      showList={showList}
       showFilmInfoHandler={showFilmInfoHandler}
+      toBackHandler={toBackHandler}
+      filteredFilms={filteredFilms}
+      showSearch={showSearch}
       showFilmInfo={showFilmInfo}
       movie={movie}
-      backToFilmListHandler={backToFilmListHandler}
+      showFilmList={showFilmList}
     />
   );
 };
