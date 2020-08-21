@@ -7,30 +7,33 @@ import ListaDeFilmes from '../ListaDeFilmes';
 import Movie from '../Movie';
 
 const AppContent = ({
-  filteredFilms,
-  showList,
+  toBackHandler,
   listaFilmesHandler,
   showFilmInfoHandler,
+  filteredFilms,
+  showSearch,
   showFilmInfo,
   movie,
-  backToFilmListHandler,
+  showFilmList,
 }) => {
-  console.log(showList);
   return (
     <div className="app-content">
-      {!showList && (
-        <Search listaFilmesHandler={listaFilmesHandler} showList={showList} />
+      {showSearch && (
+        <Search
+          listaFilmesHandler={listaFilmesHandler}
+          showSearch={showSearch}
+        />
       )}
 
-      {!!showList && (
+      {showFilmList && (
         <ListaDeFilmes
           filteredFilms={filteredFilms}
           showFilmInfoHandler={showFilmInfoHandler}
-          showList={showList}
-          backToFilmListHandler={backToFilmListHandler}
+          showSearch={showSearch}
+          toBackHandler={toBackHandler}
         />
       )}
-      {!!showFilmInfo && <Movie movie={movie} />}
+      {showFilmInfo && <Movie movie={movie} toBackHandler={toBackHandler} />}
     </div>
   );
 };
