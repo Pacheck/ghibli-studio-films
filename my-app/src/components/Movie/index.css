@@ -1,0 +1,30 @@
+.movie-container {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+
+  width: 25rem;
+  height: 27rem;
+
+  border-radius: 1em;
+
+  background-image: linear-gradient(#ddac25, #a0780b, #a07809d8);
+
+  box-shadow: 0 0 1em black;
+}
+
+.movie-table tr {
+  display: flex;
+  /* flex: 1; */
+  flex-direction: column;
+}
+
+.movie-table td {
+  margin: 0.5rem;
+
+  color: #fff;
+
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+}
