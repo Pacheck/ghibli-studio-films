@@ -68,7 +68,6 @@ const App = () => {
   }
 
   function toBackHandler(type) {
-    console.log(type);
     if (type === 'movie') {
       setShowFilmList(true);
       setShowFilmInfo(false);
