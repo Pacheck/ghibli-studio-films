@@ -3,11 +3,17 @@ import './index.css';
 
 const Search = ({ listaFilmesHandler, showList }) => {
   return (
-    <form className="search-container" onSubmit={listaFilmesHandler}>
-      <button type="submit" className="listar-filmes">
-        {!showList ? 'Listar todos os filmes' : 'Ocultar listagem de filmes'}
-      </button>
-    </form>
+    <div className="search-container">
+      <form className="search-all-list" onSubmit={listaFilmesHandler}>
+        <button type="submit">
+          {!showList ? 'Listar todos os filmes' : 'Ocultar listagem de filmes'}
+        </button>
+      </form>
+      <form className="search-for-name">
+        <button>Pesquisar por Nome</button>
+        <input />
+      </form>
+    </div>
   );
 };
 
