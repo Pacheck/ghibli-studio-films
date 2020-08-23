@@ -78,6 +78,11 @@ const App = () => {
     }
   }
 
+  function searchFilmForNameHandler(e) {
+    e.preventDefault();
+    console.log('Pesquisado por nome!');
+  }
+
   return (
     <AppContent
       listaFilmesHandler={listaFilmesHandler}
@@ -88,6 +93,7 @@ const App = () => {
       showFilmInfo={showFilmInfo}
       movie={movie}
       showFilmList={showFilmList}
+      searchFilmForNameHandler={searchFilmForNameHandler}
     />
   );
 };

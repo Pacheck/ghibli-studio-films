@@ -15,6 +15,7 @@ const AppContent = ({
   showFilmInfo,
   movie,
   showFilmList,
+  searchFilmForNameHandler,
 }) => {
   return (
     <div className="app-content">
@@ -22,6 +23,7 @@ const AppContent = ({
         <Search
           listaFilmesHandler={listaFilmesHandler}
           showSearch={showSearch}
+          searchFilmForNameHandler={searchFilmForNameHandler}
         />
       )}
 

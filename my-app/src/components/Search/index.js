@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 
-const Search = ({ listaFilmesHandler, showList }) => {
+const Search = ({ listaFilmesHandler, showList, searchFilmForNameHandler }) => {
   return (
     <div className="search-container">
       <form className="search-all-list" onSubmit={listaFilmesHandler}>
@@ -9,9 +9,9 @@ const Search = ({ listaFilmesHandler, showList }) => {
           {!showList ? 'Listar todos os filmes' : 'Ocultar listagem de filmes'}
         </button>
       </form>
-      <form className="search-for-name">
-        <button>Pesquisar por Nome</button>
-        <input />
+      <form className="search-for-name" onSubmit={searchFilmForNameHandler}>
+        <button type="submit">Pesquisar por Nome</button>
+        <input placeholder="Digite o nome do filme" />
       </form>
     </div>
   );
