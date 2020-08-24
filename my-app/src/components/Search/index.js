@@ -16,7 +16,9 @@ const Search = ({
         </button>
       </form>
       <form className="search-for-name" onSubmit={searchFilmForNameHandler}>
-        <button type="submit">Pesquisar por Nome</button>
+        <button type="submit" disabled={!filmName}>
+          Pesquisar por Nome
+        </button>
         <input
           placeholder="Digite o nome do filme"
           value={filmName}

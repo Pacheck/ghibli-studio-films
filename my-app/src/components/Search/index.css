@@ -59,6 +59,22 @@
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.9rem;
+  transition: linear 0.5s;
+}
+
+.search-for-name button:disabled {
+  color: rgba(12, 11, 11, 0.938);
+  border-color: rgba(248, 5, 54, 0.472);
+  box-shadow: rgba(156, 96, 28, 0.931);
+  background-color: rgba(44, 32, 13, 0.603);
+}
+
+button:hover {
+  color: rgb(105, 102, 102);
+  box-shadow: inset 0 0 1em rgba(255, 217, 0, 0.698);
+  transition: ease-in 0.2s;
+  border-color: rgba(236, 196, 20, 0.733);
+  background-color: rgb(236, 168, 42);
 }
 
 .search-for-name input {
