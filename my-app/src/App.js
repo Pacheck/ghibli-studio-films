@@ -26,6 +26,12 @@ const App = () => {
   const [showSearch, setshowSearch] = useState(true);
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [showFilmList, setShowFilmList] = useState(false);
+  const [showFoundFilmInfo, setShowFoundFilmInfo] = useState(false);
+  const [types, setTypes] = useState({
+    movie_type: 'movie',
+    search_type: 'search',
+    else_type: 'else',
+  });
 
   useEffect(() => {
     axios
@@ -73,6 +79,11 @@ const App = () => {
       setShowFilmList(true);
       setShowFilmInfo(false);
       setshowSearch(false);
+    } else if (type === 'search') {
+      setshowSearch(true);
+      setShowFoundFilmInfo(false);
+      setShowFilmList(false);
+      console.log('search type');
     } else {
       setshowSearch(true);
       setShowFilmList(false);
@@ -84,8 +95,9 @@ const App = () => {
 
     const foundFilm = films.filter((film) => {
       if (film.title.toUpperCase() === filmName.toUpperCase()) {
-        setShowFilmInfo(true);
+        setShowFoundFilmInfo(true);
         setFilmName('');
+        setshowSearch(false);
         return film;
       }
       return null;
@@ -107,11 +119,13 @@ const App = () => {
       filteredFilms={filteredFilms}
       showSearch={showSearch}
       showFilmInfo={showFilmInfo}
+      showFoundFilmInfo={showFoundFilmInfo}
       movie={movie}
       showFilmList={showFilmList}
       searchFilmForNameHandler={searchFilmForNameHandler}
       filmName={filmName}
       searchFilmForNameInputHandler={searchFilmForNameInputHandler}
+      types={types}
     />
   );
 };
