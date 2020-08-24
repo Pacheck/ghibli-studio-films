@@ -4,10 +4,10 @@ import './index.css';
 import Film from '../Film';
 import Navigator from '../Navigator';
 
-const Lista = ({ filteredFilms, showFilmInfoHandler, toBackHandler }) => {
+const Lista = ({ filteredFilms, showFilmInfoHandler, toBackHandler, type }) => {
   return (
     <div className="lista-container">
-      <Navigator myBackHandler={toBackHandler} />
+      <Navigator myBackHandler={toBackHandler} type={type} />
       <ul className="ul-container">
         {filteredFilms.map((filme, index) => {
           return (

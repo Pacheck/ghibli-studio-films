@@ -3,8 +3,7 @@ import './index.css';
 
 import Navigator from '../Navigator';
 
-const Movie = ({ movie, toBackHandler }) => {
-  const type = 'movie';
+const Movie = ({ movie, toBackHandler, type }) => {
   return (
     <div className="movie-container">
       <Navigator
