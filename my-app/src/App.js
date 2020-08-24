@@ -27,6 +27,7 @@ const App = () => {
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [showFilmList, setShowFilmList] = useState(false);
   const [showFoundFilmInfo, setShowFoundFilmInfo] = useState(false);
+  const [foundFilm, setFoundFilm] = useState(initiaState);
   const [types, setTypes] = useState({
     movie_type: 'movie',
     search_type: 'search',
@@ -37,6 +38,13 @@ const App = () => {
     axios
       .get('https://ghibliapi.herokuapp.com/films')
       .then((res) => setFilms([...res.data]))
+      .catch((err) => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://ghibliapi.herokuapp.com/people')
+      .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -93,7 +101,7 @@ const App = () => {
   function searchFilmForNameHandler(e) {
     e.preventDefault();
 
-    const foundFilm = films.filter((film) => {
+    const filmAtual = films.filter((film) => {
       if (film.title.toUpperCase() === filmName.toUpperCase()) {
         setShowFoundFilmInfo(true);
         setFilmName('');
@@ -102,8 +110,9 @@ const App = () => {
       }
       return null;
     });
+    setFoundFilm(filmAtual);
 
-    console.log(foundFilm);
+    console.log(filmAtual);
   }
 
   function searchFilmForNameInputHandler(e) {
@@ -126,6 +135,7 @@ const App = () => {
       filmName={filmName}
       searchFilmForNameInputHandler={searchFilmForNameInputHandler}
       types={types}
+      foundFilm={foundFilm}
     />
   );
 };
