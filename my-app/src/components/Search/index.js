@@ -25,6 +25,8 @@ const Search = ({
           onChange={searchFilmForNameInputHandler}
         />
       </form>
+
+      {/* ADICIONAR ULTIMO FILTER ! */}
     </div>
   );
 };
