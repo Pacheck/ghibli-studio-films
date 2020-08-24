@@ -19,13 +19,13 @@ const initiaState = [
 ];
 
 const App = () => {
-  const [filteredFilms, setFilteredFilms] = useState(initiaState);
   const [films, setFilms] = useState(initiaState);
-  const [showSearch, setshowSearch] = useState(true);
-  const [showFilmList, setShowFilmList] = useState(false);
-  const [showFilmInfo, setShowFilmInfo] = useState(false);
-  const [movie, setMovie] = useState(initiaState);
+  const [filteredFilms, setFilteredFilms] = useState(initiaState);
   const [filmName, setFilmName] = useState('');
+  const [movie, setMovie] = useState(initiaState);
+  const [showSearch, setshowSearch] = useState(true);
+  const [showFilmInfo, setShowFilmInfo] = useState(false);
+  const [showFilmList, setShowFilmList] = useState(false);
 
   useEffect(() => {
     axios
@@ -83,8 +83,14 @@ const App = () => {
     e.preventDefault();
 
     const foundFilm = films.filter((film) => {
-      return film.title.toUpperCase() === filmName.toUpperCase();
+      if (film.title.toUpperCase() === filmName.toUpperCase()) {
+        setShowFilmInfo(true);
+        setFilmName('');
+        return film;
+      }
+      return null;
     });
+
     console.log(foundFilm);
   }
 
