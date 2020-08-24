@@ -20,6 +20,7 @@ const AppContent = ({
   filmName,
   searchFilmForNameInputHandler,
   types,
+  foundFilm,
 }) => {
   // console.log(types);
   return (
@@ -45,14 +46,14 @@ const AppContent = ({
       )}
       {showFilmInfo && (
         <Movie
-          movie={movie}
+          movie={[movie]}
           toBackHandler={toBackHandler}
           type={types.movie_type}
         />
       )}
       {showFoundFilmInfo && (
         <Movie
-          movie={movie}
+          movie={foundFilm}
           toBackHandler={toBackHandler}
           type={types.search_type}
         />
