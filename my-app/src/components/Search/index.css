@@ -69,7 +69,8 @@
   background-color: rgba(44, 32, 13, 0.603);
 }
 
-button:hover {
+.search-for-name button:hover,
+.search-all-list button:hover {
   color: rgb(105, 102, 102);
   box-shadow: inset 0 0 1em rgba(255, 217, 0, 0.698);
   transition: ease-in 0.2s;
