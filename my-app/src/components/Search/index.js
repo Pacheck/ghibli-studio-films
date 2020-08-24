@@ -27,6 +27,7 @@ const Search = ({
       </form>
 
       {/* ADICIONAR ULTIMO FILTER ! */}
+      {/* ADICIONAR PESQUISA POR PERSONAGEM / HUMANO */}
     </div>
   );
 };

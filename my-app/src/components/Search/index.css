@@ -76,6 +76,7 @@
   transition: ease-in 0.2s;
   border-color: rgba(236, 196, 20, 0.733);
   background-color: rgb(236, 168, 42);
+  cursor: pointer;
 }
 
 .search-for-name input {
