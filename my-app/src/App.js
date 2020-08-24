@@ -25,6 +25,7 @@ const App = () => {
   const [showFilmList, setShowFilmList] = useState(false);
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [movie, setMovie] = useState(initiaState);
+  const [filmName, setFilmName] = useState('');
 
   useEffect(() => {
     axios
@@ -80,7 +81,19 @@ const App = () => {
 
   function searchFilmForNameHandler(e) {
     e.preventDefault();
-    console.log('Pesquisado por nome!');
+
+    const foundFilm = filteredFilms.map((film) => {
+      console.log('Title: ' + film.title);
+      console.log('FilmName: ' + filmName);
+      return filmName === film.title;
+    });
+
+    console.log(foundFilm);
+  }
+
+  function searchFilmForNameInputHandler(e) {
+    console.log(films);
+    setFilmName(e.target.value);
   }
 
   return (
@@ -94,6 +107,8 @@ const App = () => {
       movie={movie}
       showFilmList={showFilmList}
       searchFilmForNameHandler={searchFilmForNameHandler}
+      filmName={filmName}
+      searchFilmForNameInputHandler={searchFilmForNameInputHandler}
     />
   );
 };

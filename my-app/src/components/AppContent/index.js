@@ -16,14 +16,18 @@ const AppContent = ({
   movie,
   showFilmList,
   searchFilmForNameHandler,
+  filmName,
+  searchFilmForNameInputHandler,
 }) => {
   return (
     <div className="app-content">
       {showSearch && (
         <Search
+          filmName={filmName}
           listaFilmesHandler={listaFilmesHandler}
           showSearch={showSearch}
           searchFilmForNameHandler={searchFilmForNameHandler}
+          searchFilmForNameInputHandler={searchFilmForNameInputHandler}
         />
       )}
 

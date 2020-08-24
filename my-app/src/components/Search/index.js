@@ -1,7 +1,13 @@
 import React from 'react';
 import './index.css';
 
-const Search = ({ listaFilmesHandler, showList, searchFilmForNameHandler }) => {
+const Search = ({
+  listaFilmesHandler,
+  showList,
+  searchFilmForNameHandler,
+  filmName,
+  searchFilmForNameInputHandler,
+}) => {
   return (
     <div className="search-container">
       <form className="search-all-list" onSubmit={listaFilmesHandler}>
@@ -11,7 +17,11 @@ const Search = ({ listaFilmesHandler, showList, searchFilmForNameHandler }) => {
       </form>
       <form className="search-for-name" onSubmit={searchFilmForNameHandler}>
         <button type="submit">Pesquisar por Nome</button>
-        <input placeholder="Digite o nome do filme" />
+        <input
+          placeholder="Digite o nome do filme"
+          value={filmName}
+          onChange={searchFilmForNameInputHandler}
+        />
       </form>
     </div>
   );
