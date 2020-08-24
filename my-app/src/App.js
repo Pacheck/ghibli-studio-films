@@ -82,18 +82,15 @@ const App = () => {
   function searchFilmForNameHandler(e) {
     e.preventDefault();
 
-    const foundFilm = filteredFilms.map((film) => {
-      console.log('Title: ' + film.title);
-      console.log('FilmName: ' + filmName);
-      return filmName === film.title;
+    const foundFilm = films.filter((film) => {
+      return film.title.toUpperCase() === filmName.toUpperCase();
     });
-
     console.log(foundFilm);
   }
 
   function searchFilmForNameInputHandler(e) {
-    console.log(films);
-    setFilmName(e.target.value);
+    const userInput = e.target.value;
+    setFilmName(userInput);
   }
 
   return (
