@@ -13,12 +13,15 @@ const AppContent = ({
   filteredFilms,
   showSearch,
   showFilmInfo,
+  showFoundFilmInfo,
   movie,
   showFilmList,
   searchFilmForNameHandler,
   filmName,
   searchFilmForNameInputHandler,
+  types,
 }) => {
+  // console.log(types);
   return (
     <div className="app-content">
       {showSearch && (
@@ -37,9 +40,23 @@ const AppContent = ({
           showFilmInfoHandler={showFilmInfoHandler}
           showSearch={showSearch}
           toBackHandler={toBackHandler}
+          type={types.else_type}
         />
       )}
-      {showFilmInfo && <Movie movie={movie} toBackHandler={toBackHandler} />}
+      {showFilmInfo && (
+        <Movie
+          movie={movie}
+          toBackHandler={toBackHandler}
+          type={types.movie_type}
+        />
+      )}
+      {showFoundFilmInfo && (
+        <Movie
+          movie={movie}
+          toBackHandler={toBackHandler}
+          type={types.search_type}
+        />
+      )}
     </div>
   );
 };
