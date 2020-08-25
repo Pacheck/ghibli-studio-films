@@ -7,16 +7,19 @@ const Search = ({
   searchFilmForNameHandler,
   filmName,
   searchFilmForNameInputHandler,
+  peopleNameHandler,
+  peopleName,
+  showPeopleHandler,
 }) => {
   return (
     <div className="search-container">
-      <form className="search-all-list" onSubmit={listaFilmesHandler}>
-        <button type="submit">
+      <div className="search-all-list">
+        <button onClick={listaFilmesHandler}>
           {!showList ? 'Listar todos os filmes' : 'Ocultar listagem de filmes'}
         </button>
-      </form>
-      <form className="search-for-name" onSubmit={searchFilmForNameHandler}>
-        <button type="submit" disabled={!filmName}>
+      </div>
+      <div className="search-for-name">
+        <button onClick={searchFilmForNameHandler} disabled={!filmName}>
           Pesquisar por Nome
         </button>
         <input
@@ -24,10 +27,17 @@ const Search = ({
           value={filmName}
           onChange={searchFilmForNameInputHandler}
         />
-      </form>
-
-      {/* ADICIONAR ULTIMO FILTER ! */}
-      {/* ADICIONAR PESQUISA POR PERSONAGEM / HUMANO */}
+      </div>
+      <div className="search-people-container">
+        <button onClick={showPeopleHandler} disabled={!peopleName}>
+          Pesquisar pessoa
+        </button>
+        <input
+          placeholder="Digite o nome da pessoa"
+          value={peopleName}
+          onChange={peopleNameHandler}
+        />
+      </div>
     </div>
   );
 };

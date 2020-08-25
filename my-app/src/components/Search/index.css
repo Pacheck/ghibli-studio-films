@@ -62,7 +62,8 @@
   transition: linear 0.5s;
 }
 
-.search-for-name button:disabled {
+.search-for-name button:disabled,
+.search-people-container button:disabled {
   color: rgba(12, 11, 11, 0.938);
   border-color: rgba(248, 5, 54, 0.472);
   box-shadow: rgba(156, 96, 28, 0.931);
@@ -70,7 +71,8 @@
 }
 
 .search-for-name button:hover,
-.search-all-list button:hover {
+.search-all-list button:hover,
+.search-people-container button:hover {
   color: rgb(105, 102, 102);
   box-shadow: inset 0 0 1em rgba(255, 217, 0, 0.698);
   transition: ease-in 0.2s;
@@ -93,6 +95,42 @@
   font-family: 'Courier New', Courier, monospace;
 }
 
-.search-for-name input:focus {
+.search-for-name input:focus,
+.search-people-container input:focus {
   outline-color: rgb(226, 205, 16);
+}
+
+.search-people-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-people-container button {
+  height: 2.5rem;
+  width: 16.5rem;
+
+  border-radius: 0.5rem;
+  box-shadow: inset 0 0 1em #8b5709;
+  outline: none;
+  border-color: #aa7018;
+  background-color: #b17b2b;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 0.9rem;
+  transition: linear 0.5s;
+}
+
+.search-people-container input {
+  height: 1.5rem;
+  width: 14.6rem;
+  padding: 0.2rem;
+  margin-top: 0.6rem;
+
+  border: none;
+  border-radius: 0.3rem;
+
+  background-color: rgba(240, 206, 134, 0.781);
+
+  font-family: 'Courier New', Courier, monospace;
 }
