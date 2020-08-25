@@ -8,11 +8,14 @@ const People = ({ people, type, toBackHandler }) => {
       <ul className="ul-container">
         {people.map((person, index) => {
           return (
+            // name, gender, age, eye color, hair color, films
             <div key={index}>
               <li>{person.name}</li>
-              <li></li>
-              <li></li>
-              <li></li>
+              <li>{person.age}</li>
+              <li>{person.gender}</li>
+              <li>{person.eye_color}</li>
+              <li>{person.hair_color}</li>
+              <li>{person.films}</li>
             </div>
             // <Film
             //   key={index}

@@ -25,6 +25,7 @@ const App = () => {
   const [peopleName, setPeopleName] = useState('');
   const [movie, setMovie] = useState(initiaState);
   const [people, setPeople] = useState([]);
+  const [selectedPeople, setSelectedPeople] = useState([]);
 
   const [showSearch, setshowSearch] = useState(true);
   const [showFilmInfo, setShowFilmInfo] = useState(false);
@@ -128,7 +129,13 @@ const App = () => {
     setPeopleName(userInput);
   }
 
-  function showPeopleHandler() {}
+  function showPeopleHandler() {
+    const newPeople = people.filter((person) => {
+      return peopleName === person.name;
+    });
+
+    console.log(newPeople);
+  }
 
   return (
     <AppContent
@@ -149,6 +156,7 @@ const App = () => {
       peopleNameHandler={peopleNameHandler}
       peopleName={peopleName}
       people={people}
+      showPeopleHandler={showPeopleHandler}
     />
   );
 };
