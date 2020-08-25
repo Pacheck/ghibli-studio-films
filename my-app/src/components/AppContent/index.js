@@ -25,8 +25,8 @@ const AppContent = ({
   peopleNameHandler,
   peopleName,
   showPeopleHandler,
-  people,
-  selectedPeople = { selectedPeople },
+  selectedPeople,
+  showPeopleInfo,
 }) => {
   // console.log(types);
   return (
@@ -68,11 +68,13 @@ const AppContent = ({
         />
       )}
 
-      <PeopleSearchch
-        selectedPeople={selectedPeople}
-        toBackHandler={toBackHandler}
-        type={types.else_type}
-      />
+      {showPeopleInfo && (
+        <PeopleSearchch
+          selectedPeople={selectedPeople}
+          toBackHandler={toBackHandler}
+          type={types.else_type}
+        />
+      )}
     </div>
   );
 };

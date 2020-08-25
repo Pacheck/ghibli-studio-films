@@ -17,12 +17,6 @@ const People = ({ selectedPeople, type, toBackHandler }) => {
               <li>{`Hair color: ${person.hair_color}`}</li>
               <li>{`Films: ${person.films}`}</li>
             </div>
-            // <Film
-            //   key={index}
-            //   film={filme}
-            //   showFilmInfoHandler={showFilmInfoHandler}
-            //   myBackHandler={toBackHandler}
-            // />
           );
         })}
       </ul>

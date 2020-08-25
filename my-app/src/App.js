@@ -31,6 +31,7 @@ const App = () => {
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [showFilmList, setShowFilmList] = useState(false);
   const [showFoundFilmInfo, setShowFoundFilmInfo] = useState(false);
+  const [showPeopleInfo, setShowPeopleInfo] = useState(false);
   const [foundFilm, setFoundFilm] = useState(initiaState);
   const [types, setTypes] = useState({
     movie_type: 'movie',
@@ -99,6 +100,7 @@ const App = () => {
     } else {
       setshowSearch(true);
       setShowFilmList(false);
+      setShowPeopleInfo(false);
     }
   }
 
@@ -134,7 +136,12 @@ const App = () => {
       return peopleName === person.name;
     });
     setSelectedPeople(newPeople);
+    setShowPeopleInfo(true);
+    setshowSearch(false);
+    setPeopleName('');
     console.log(newPeople);
+
+    //Setar o view people info
   }
 
   return (
@@ -158,6 +165,7 @@ const App = () => {
       people={people}
       showPeopleHandler={showPeopleHandler}
       selectedPeople={selectedPeople}
+      showPeopleInfo={showPeopleInfo}
     />
   );
 };
