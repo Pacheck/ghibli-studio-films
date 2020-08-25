@@ -22,7 +22,10 @@ const App = () => {
   const [films, setFilms] = useState(initiaState);
   const [filteredFilms, setFilteredFilms] = useState(initiaState);
   const [filmName, setFilmName] = useState('');
+  const [peopleName, setPeopleName] = useState('');
   const [movie, setMovie] = useState(initiaState);
+  const [people, setPeople] = useState([]);
+
   const [showSearch, setshowSearch] = useState(true);
   const [showFilmInfo, setShowFilmInfo] = useState(false);
   const [showFilmList, setShowFilmList] = useState(false);
@@ -44,7 +47,7 @@ const App = () => {
   useEffect(() => {
     axios
       .get('https://ghibliapi.herokuapp.com/people')
-      .then((res) => console.log(res.data))
+      .then((res) => setPeople([...res.data]))
       .catch((err) => console.log(err));
   }, []);
 
@@ -120,6 +123,13 @@ const App = () => {
     setFilmName(userInput);
   }
 
+  function peopleNameHandler(e) {
+    const userInput = e.target.value;
+    setPeopleName(userInput);
+  }
+
+  function showPeopleHandler() {}
+
   return (
     <AppContent
       listaFilmesHandler={listaFilmesHandler}
@@ -136,6 +146,9 @@ const App = () => {
       searchFilmForNameInputHandler={searchFilmForNameInputHandler}
       types={types}
       foundFilm={foundFilm}
+      peopleNameHandler={peopleNameHandler}
+      peopleName={peopleName}
+      people={people}
     />
   );
 };

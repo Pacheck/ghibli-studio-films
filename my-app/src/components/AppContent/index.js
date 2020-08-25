@@ -5,6 +5,7 @@ import './index.css';
 import Search from '../Search';
 import ListaDeFilmes from '../ListaDeFilmes';
 import Movie from '../Movie';
+import PeopleSearchch from '../PeopleSearch';
 
 const AppContent = ({
   toBackHandler,
@@ -21,6 +22,10 @@ const AppContent = ({
   searchFilmForNameInputHandler,
   types,
   foundFilm,
+  peopleNameHandler,
+  peopleName,
+  showPeopleHandler,
+  people,
 }) => {
   // console.log(types);
   return (
@@ -32,6 +37,9 @@ const AppContent = ({
           showSearch={showSearch}
           searchFilmForNameHandler={searchFilmForNameHandler}
           searchFilmForNameInputHandler={searchFilmForNameInputHandler}
+          peopleNameHandler={peopleNameHandler}
+          peopleName={peopleName}
+          showPeopleHandler={showPeopleHandler}
         />
       )}
 
@@ -58,6 +66,12 @@ const AppContent = ({
           type={types.search_type}
         />
       )}
+
+      <PeopleSearchch
+        people={people}
+        toBackHandler={toBackHandler}
+        type={types.else_type}
+      />
     </div>
   );
 };
