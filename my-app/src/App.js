@@ -133,7 +133,7 @@ const App = () => {
     const newPeople = people.filter((person) => {
       return peopleName === person.name;
     });
-
+    setSelectedPeople(newPeople);
     console.log(newPeople);
   }
 
@@ -157,6 +157,7 @@ const App = () => {
       peopleName={peopleName}
       people={people}
       showPeopleHandler={showPeopleHandler}
+      selectedPeople={selectedPeople}
     />
   );
 };

@@ -26,6 +26,7 @@ const AppContent = ({
   peopleName,
   showPeopleHandler,
   people,
+  selectedPeople = { selectedPeople },
 }) => {
   // console.log(types);
   return (
@@ -68,7 +69,7 @@ const AppContent = ({
       )}
 
       <PeopleSearchch
-        people={people}
+        selectedPeople={selectedPeople}
         toBackHandler={toBackHandler}
         type={types.else_type}
       />
