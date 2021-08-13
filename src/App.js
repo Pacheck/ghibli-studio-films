@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
 
 // Components
 import AppContent from './components/AppContent';
@@ -42,7 +41,10 @@ const App = () => {
   useEffect(() => {
     axios
       .get('https://ghibliapi.herokuapp.com/films')
-      .then((res) => setFilms([...res.data]))
+      .then((res) => {
+        console.log(res);
+        setFilms([...res.data]);
+      })
       .catch((err) => console.log(err));
   }, []);
 
